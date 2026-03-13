@@ -140,3 +140,50 @@ console.log("Стрелочная функция сложения:", arrowAdd(5,
 
 const double = x => x * 2;
 console.log("Стрелочная функция удвоения:", double(10));
+
+console.log("Шаг 7. Массивы ");
+
+let arr = [1, 2, 3];
+console.log("Массив:", arr);
+
+let colors = ["Red", "Green", "Blue"];
+console.log(" Задание 7.4 ");
+console.log("Первый:", colors[0], "Последний:", colors[colors.length - 1]);
+colors[1] = "Yellow";
+console.log("Изменённые цвета:", colors);
+
+console.log("Длина массива colors:", colors.length);
+
+colors.push("Black");
+console.log("После push:", colors);
+colors.pop();
+console.log("После pop:", colors);
+
+let students = [];
+students.push("Anna");
+students.push("Bob");
+students.push("Charlie");
+students.pop();
+console.log("Задание 7.7 ");
+console.log("Студенты:", students);
+
+for (let i = 0; i < students.length; i++) {
+    console.log("Студент:", students[i]);
+}
+
+for (let student of students) {
+    console.log("Студент (of):", student);
+}
+
+let cities = ["Moscow", "Paris", "London"];
+let index = cities.indexOf("Paris");
+console.log("Индекс Paris:", index);
+console.log("Включает London:", cities.includes("London"));
+
+let targetCity = "London";
+console.log("Задание 7.12");
+if (cities.includes(targetCity)) {
+    console.log("Город найден на индексе:", cities.indexOf(targetCity));
+} else {
+    console.log("Город не найден");
+}
