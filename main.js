@@ -80,3 +80,63 @@ for (let i = 1; i <= 4; i++) {
     }
     console.log(line);
 }
+
+console.log(" Шаг 6");
+
+function add(a, b) {
+    return a + b;
+}
+console.log("Сложение 2+3:", add(2, 3));
+
+function multiply(x, y) {
+    return x * y;
+}
+console.log(" Задание 6.3");
+console.log("Умножение 4*5:", multiply(4, 5));
+
+function sayHello() {
+    console.log("Привет, Мир!");
+}
+sayHello();
+
+function printInfo(name, age) {
+    console.log("Задание 6.5");
+    console.log(`Имя: ${name}, Возраст: ${age}`);
+}
+printInfo("Alex", 25);
+
+function greet(name = "Гость") {
+    console.log("Привет, " + name);
+}
+greet();
+greet("Maria");
+
+function calculateDiscount(price, discount = 10) {
+    return price - (price * discount / 100);
+}
+console.log("Задание 6.7");
+console.log("Цена со скидкой по умолчанию:", calculateDiscount(100));
+console.log("Цена со скидкой 20%:", calculateDiscount(100, 20));
+
+const myFunc = function() {
+    console.log("Функция как значение");
+};
+myFunc();
+
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+const counter = createCounter();
+console.log("Счётчик замыкания:", counter());
+
+const arrowAdd = (a, b) => {
+    return a + b;
+};
+console.log("Стрелочная функция сложения:", arrowAdd(5, 5));
+
+const double = x => x * 2;
+console.log("Стрелочная функция удвоения:", double(10));
