@@ -1,69 +1,77 @@
-console.log("Шаг 5");
+console.log("--- Шаг 5. Циклы ---");
 
-for (let i = 0; i < 10; i++) {
-    console.log("For cycle i:", i);
+for (let i = 0; i < 5; i++) {
+    console.log(i);
 }
 
-console.log("Task 5.3.1");
+console.log("--- Задание 5.3.1 ---");
 for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
 
-console.log("Task 5.3.2 ");
+console.log("--- Задание 5.3.2 ---");
 for (let i = 1; i <= 10; i++) {
     if (i % 2 === 0) {
-        console.log("Even:", i);
+        console.log(i);
     }
 }
 
-console.log("Task 5.3.3");
+console.log("--- Задание 5.3.3 ---");
 let sum = 0;
 for (let i = 1; i <= 10; i++) {
     sum += i;
 }
-console.log("Sum 1 to 10:", sum);
+console.log("Сумма:", sum);
 
-console.log("Task 5.4 ");
-let count = 5;
-while (count > 0) {
-    console.log("While count:", count);
-    count--;
+console.log("--- Задание 5.4 ---");
+let count = 0;
+while (count < 3) {
+    console.log("Count:", count);
+    count++;
 }
 
+console.log("--- Задание 5.5 ---");
 let number = 5;
-console.log("Task 5.5");
 while (number > 0) {
-    console.log("Number:", number);
+    console.log(number);
     number--;
 }
 
-console.log("Task 5.6");
-let k = 0;
+console.log("--- Задание 5.6 ---");
+let doValue = 0;
 do {
-    console.log("Do...While k:", k);
-    k++;
-} while (k < 3);
+    console.log("Value:", doValue);
+    doValue++;
+} while (doValue < 3);
 
-console.log("Task 5.7");
+console.log("--- Задание 5.7 Break ---");
 for (let i = 0; i < 10; i++) {
-    if (i === 3) break;
-    console.log("Break loop:", i);
+    if (i === 5) {
+        break;
+    }
+    console.log(i);
 }
 
-console.log("Task 5.7");
+console.log("--- Задание 5.7 Continue ---");
 for (let i = 0; i < 5; i++) {
-    if (i === 2) continue;
-    console.log("Continue loop:", i);
+    if (i === 2) {
+        continue;
+    }
+    console.log(i);
 }
 
-console.log(" Task 5.8 ");
+console.log("--- Задание 5.8 ---");
 for (let i = 1; i <= 10; i++) {
-    if (i === 5) continue;  
-    if (i === 8) break;    
-    console.log("задачка 5.8:", i);
+    if (i === 5) {
+        continue;
+    }
+    if (i === 8) {
+        break;
+    }
+    console.log(i);
 }
 
-console.log("5.9");
+console.log("--- Задание 5.9 ---");
 for (let i = 1; i <= 3; i++) {
     let star = "";
     for (let j = 0; j < i; j++) {
@@ -72,7 +80,7 @@ for (let i = 1; i <= 3; i++) {
     console.log(star);
 }
 
-console.log("Самостоялка йоу");
+console.log("--- Задание 5.10 ---");
 for (let i = 1; i <= 4; i++) {
     let line = "";
     for (let j = 0; j < i; j++) {
@@ -81,109 +89,222 @@ for (let i = 1; i <= 4; i++) {
     console.log(line);
 }
 
-console.log(" Шаг 6");
+console.log("\n--- Шаг 6. Функции ---");
 
-function add(a, b) {
+function sum(a, b) {
     return a + b;
 }
-console.log("Сложение 2+3:", add(2, 3));
+console.log("Sum(3, 5):", sum(3, 5));
 
 function multiply(x, y) {
     return x * y;
 }
-console.log(" Задание 6.3");
-console.log("Умножение 4*5:", multiply(4, 5));
+console.log("--- Задание 6.3 ---");
+console.log("Multiply(4, 5):", multiply(4, 5));
 
-function sayHello() {
-    console.log("Привет, Мир!");
+function sayHello(name) {
+    console.log(`Hello, ${name}`);
 }
-sayHello();
+sayHello("Тимофей");
 
 function printInfo(name, age) {
-    console.log("Задание 6.5");
+    console.log("--- Задание 6.5 ---");
     console.log(`Имя: ${name}, Возраст: ${age}`);
 }
-printInfo("Alex", 25);
+printInfo("Анна", 25);
 
 function greet(name = "Гость") {
     console.log("Привет, " + name);
 }
 greet();
-greet("Maria");
+greet("Анастасия");
 
 function calculateDiscount(price, discount = 10) {
     return price - (price * discount / 100);
 }
-console.log("Задание 6.7");
-console.log("Цена со скидкой по умолчанию:", calculateDiscount(100));
-console.log("Цена со скидкой 20%:", calculateDiscount(100, 20));
+console.log("--- Задание 6.7 ---");
+console.log("Цена со скидкой:", calculateDiscount(1000));
+console.log("Цена со скидкой 20%:", calculateDiscount(1000, 20));
 
-const myFunc = function() {
-    console.log("Функция как значение");
+const add = function(a, b) {
+    return a + b;
 };
-myFunc();
+console.log("Add(2, 3):", add(2, 3));
 
-function createCounter() {
+function makeCounter() {
     let count = 0;
     return function() {
         count++;
         return count;
     };
 }
-const counter = createCounter();
-console.log("Счётчик замыкания:", counter());
+const counter = makeCounter();
+console.log("Counter:", counter());
+console.log("Counter:", counter());
+console.log("Counter:", counter());
 
-const arrowAdd = (a, b) => {
+function sumFunc(a, b) {
     return a + b;
-};
-console.log("Стрелочная функция сложения:", arrowAdd(5, 5));
+}
+console.log("SumFunc(5, 3):", sumFunc(5, 3));
+
+const sumFunc2 = (a, b) => a + b;
+console.log("SumFunc2(5, 3):", sumFunc2(5, 3));
 
 const double = x => x * 2;
-console.log("Стрелочная функция удвоения:", double(10));
+console.log("Double(10):", double(10));
 
-console.log("Шаг 7. Массивы ");
+const sumFunc3 = (a, b) => a + b;
+console.log("SumFunc3(7, 8):", sumFunc3(7, 8));
 
-let arr = [1, 2, 3];
-console.log("Массив:", arr);
+const sayGreeting = () => console.log("Hello");
+sayGreeting();
+
+const square = x => x * x;
+console.log("Square(4):", square(4));
+
+const calculate = (a, b) => {
+    let result = a + b;
+    return result * 2;
+};
+console.log("Calculate(3, 4):", calculate(3, 4));
+
+console.log("\n--- Шаг 7. Массивы ---");
+
+let numbersArr = [1, 2, 3, 4, 5];
+console.log("NumbersArr:", numbersArr);
+
+console.log("numbersArr[0]:", numbersArr[0]);
+console.log("numbersArr[1]:", numbersArr[1]);
 
 let colors = ["Red", "Green", "Blue"];
-console.log(" Задание 7.4 ");
-console.log("Первый:", colors[0], "Последний:", colors[colors.length - 1]);
+console.log("--- Задание 7.4 ---");
+console.log("First:", colors[0]);
+console.log("Last:", colors[colors.length - 1]);
 colors[1] = "Yellow";
-console.log("Изменённые цвета:", colors);
+console.log("Colors:", colors);
 
-console.log("Длина массива colors:", colors.length);
+console.log("Length:", numbersArr.length);
 
-colors.push("Black");
-console.log("После push:", colors);
-colors.pop();
-console.log("После pop:", colors);
+numbersArr.push(10);
+console.log("After push:", numbersArr);
+
+numbersArr.pop();
+console.log("After pop:", numbersArr);
 
 let students = [];
 students.push("Anna");
 students.push("Bob");
 students.push("Charlie");
 students.pop();
-console.log("Задание 7.7 ");
-console.log("Студенты:", students);
+console.log("--- Задание 7.7 ---");
+console.log("Students:", students);
 
-for (let i = 0; i < students.length; i++) {
-    console.log("Студент:", students[i]);
+let numbers2 = [10, 20, 30];
+for (let i = 0; i < numbers2.length; i++) {
+    console.log("numbers2[" + i + "]:", numbers2[i]);
 }
 
-for (let student of students) {
-    console.log("Студент (of):", student);
+for (let value of numbers2) {
+    console.log("Value:", value);
 }
 
-let cities = ["Moscow", "Paris", "London"];
-let index = cities.indexOf("Paris");
-console.log("Индекс Paris:", index);
-console.log("Включает London:", cities.includes("London"));
+let mixedArray = [1, "text", true, 3.14];
+console.log("MixedArray:", mixedArray);
 
-let targetCity = "London";
-console.log("Задание 7.12");
-if (cities.includes(targetCity)) {
-    console.log("Город найден на индексе:", cities.indexOf(targetCity));
+let fruits = ["apple", "banana", "cherry"];
+console.log("Includes banana:", fruits.includes("banana"));
+console.log("Includes mango:", fruits.includes("mango"));
+
+let cities = ["Moscow", "Saint Petersburg", "Kazan"];
+console.log("--- Задание 7.12 ---");
+let searchCity = "Kazan";
+if (cities.includes(searchCity)) {
+    console.log("Index of", searchCity + ":", cities.indexOf(searchCity));
 } else {
-    console.log("Город не найден");
+    console.log("City not found");
 }
+
+console.log("\n--- Шаг 8. Объекты ---");
+
+let user2 = {
+    name: "Ivan",
+    age: 20,
+    isStudent: true
+};
+console.log("User2:", user2);
+
+console.log("user2.name:", user2.name);
+console.log("user2.age:", user2.age);
+console.log("user2['name']:", user2["name"]);
+
+let book = {
+    title: "JavaScript Guide",
+    author: "John Doe",
+    year: 2023
+};
+console.log("--- Задание 8.4 ---");
+console.log("Title:", book.title);
+console.log("Author:", book.author);
+console.log("Year:", book.year);
+book.year = 2024;
+console.log("New year:", book.year);
+
+book.pages = 350;
+delete book.author;
+console.log("Modified book:", book);
+
+let person = {
+    name: "John",
+    age: 30
+};
+person.sayHello = function() {
+    console.log("Hello, I am " + this.name);
+};
+person.sayHello();
+
+let car = {
+    brand: "Toyota",
+    year: 2020
+};
+car.getInfo = function() {
+    console.log("--- Задание 8.7 ---");
+    console.log("Car: " + this.brand + ", Year: " + this.year);
+};
+car.getInfo();
+
+for (let key in book) {
+    console.log(key + ":", book[key]);
+}
+
+let product = {
+    name: "Laptop",
+    price: 1000,
+    inStock: true
+};
+console.log("--- Задание 8.9 ---");
+for (let key in product) {
+    console.log(key + ":", product[key]);
+}
+
+let user = {
+    name: "Alice",
+    contacts: {
+        email: "alice@example.com",
+        phone: "+1234567890"
+    },
+    hobbies: ["reading", "gaming"]
+};
+console.log("Nested object:", user);
+console.log("Email:", user.contacts.email);
+console.log("First hobby:", user.hobbies[0]);
+
+let student = {name: "Григорий",
+skills: ["HTML", "CSS", "JS"],
+address: {
+city: "Волжский",
+street: "Пушкина",
+  },
+};
+console.log(student. skills [0]) ;
+console.log(student. address. city) 
